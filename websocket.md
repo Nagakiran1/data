@@ -60,7 +60,8 @@ CASP uses this `"start"` packet to:
     "callSid": "CA6789",
     "streamSid": "MZabc123",
     "resource": "user@company.com",
-    "conf_name": "QmFzZTY0IEVuY29kZWQgQ29uZmln"
+    "conf_name": "GoogleGmail",
+    "bearer": "QmFzZTY0IEVuY29kZWQgQ29uZmln"
   }
 }
 ```
