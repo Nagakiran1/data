@@ -67,46 +67,6 @@ CASP uses this `"start"` packet to:
 
 ---
 
-# 🧠 Server-Side Start Message Loader (Your function)
-
-### **Python Implementation**
-
-```python
-import base64
-
-def load_twilio_start_message(fp, data, casp_casual_prompt):
-    print('\n\n\n Message from Twilio   --  ', json.dumps(data, indent=4), '\n\n\n')
-
-    accountSid = data.get('start', {}).get('accountSid')
-    callSid = data.get('start', {}).get('callSid')
-    streamSid = data.get('start', {}).get('streamSid')
-    resource = data.get('start', {}).get('resource', None)
-    asst_conf_name = data.get('start', {}).get('conf_name', None)
-
-    # Load assistant configuration if present
-    if resource and asst_conf_name:
-        asst_conf_name = base64.b64decode(asst_conf_name).decode('utf-8')
-        asst_conf = fp.update_asst_configuration(resource=resource, conf_name=asst_conf_name)
-        greeting = asst_conf['model']['first_message']
-        system_prompt = asst_conf['model']['system_prompt']
-    else:
-        resource = "nagakiran224@outlook.com"
-        greeting = "Hi, I am Echo from CRM Assist. How can I help you today?"
-        system_prompt = casp_casual_prompt
-
-    # Gather connected apps & cached data
-    apps = fp.table_client.query_data(
-        query=f"resource eq '{resource}'",
-        table_name='AppIntegrations'
-    )
-    user_profile = generate_crisp_profile(apps)
-    cached_reference, search_results = get_cached_resource_data(fp, resource)
-
-    # One-shot system prompt
-    oneshot_prompt = f"""{system_prompt}\n\n **Connected Apps:**  \n{user_profile}\n\n **Recent Data Snapshot:**  \n{cached_reference}"""
-
-    return greeting, oneshot_prompt, resource, callSid, streamSid, accountSid
-```
 
 ---
 
