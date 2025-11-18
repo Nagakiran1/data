@@ -965,7 +965,7 @@ Each feature includes:
 
 ---
 
-# ✅ **Virtual Assistant (VA)**
+# ✅ **Agent Virtual Assistant (VA)**
 
 (Calls | Messages | Jarvis Assistant)
 Your hands-free personal operator for communication and productivity.
@@ -1130,12 +1130,126 @@ Examples:
 
 ---
 
-If you want, I can now:
-✅ Convert this into **JSON NLU dataset**
-✅ Merge into your **full capability matrix**
-✅ Format as a **Confluence documentation page**
-or
-✅ Add **more Jarvis skills** (GitHub, Jenkins, Zoom, MS Teams, Figma, etc.)
 
-What should I generate next?
+
+
+Here you go — **clean, structured, 6-pointer features for both Community Cloud and On-Premise Hosting**, under the main heading **Enterprise Secure**.
+
+I’ve written them in the *same style* as your VA examples — **crisp heading → 6 feature bullets → benefit-focused descriptions → examples**.
+
+---
+
+# ✅ **Agent Enterprise Secure**
+
+
+### *(Community Cloud | On-Premise Hosting)*
+
+High-trust infrastructure options tailored for enterprises at different scales and security needs.
+
+---
+
+# ☁️ **Community Cloud**
+
+*For small teams needing robust, fast onboarding with secure shared infrastructure.*
+
+### 1️⃣ Quick Team Onboarding
+
+**Description:** Set up users and workspaces instantly with preconfigured security and tooling.
+**Examples:**
+• “Add a new team member with viewer access.”
+• “Create a workspace for document automation.”
+
+### 2️⃣ Managed Data Storage
+
+**Description:** Up to **1 TB secure storage**, multi-drive support, structured data organisation.
+**Examples:**
+• “Upload all HR documents to shared drive.”
+• “Sync my Google Drive folder here.”
+
+### 3️⃣ Basic Security with Enforced Controls
+
+**Description:** Encrypted data, limited privileged actions, managed compliance.
+**Examples:**
+• “Enable 2FA for all team members.”
+• “Restrict downloads for external collaborators.”
+
+### 4️⃣ Lightweight Automation & Agents
+
+**Description:** Use up to **5 agents** for scanning, workflows, and automation.
+**Examples:**
+• “Run document classification agent on 500 files.”
+• “Trigger summary bot every morning.”
+
+### 5️⃣ Document Capacity & Performance
+
+**Description:** Supports **50,000 documents** with optimized processing on CASP clusters.
+**Examples:**
+• “Process today's batch of agreements.”
+• “Index all new files for search.”
+
+### 6️⃣ Predictable, Subscription-Free Usage
+
+**Description:** No expiration, no forced subscription — easy scale for small teams.
+**Examples:**
+• “Extend storage without upgrading plan.”
+• “Add more document slots anytime.”
+
+---
+
+# 🏢 **On-Premise Hosting**
+
+*For enterprises needing maximum control, compliance, customization, and in-house security.*
+
+### 1️⃣ Full Data Ownership & Compliance
+
+**Description:** All documents, logs, and metadata stay inside the organisation’s private infrastructure.
+**Examples:**
+• “Store all confidential contracts in our internal racks.”
+• “Run audit logs fully on-prem.”
+
+### 2️⃣ Premium Enterprise Security
+
+**Description:** Advanced encryption, VPC isolation, zero-trust networking, identity integration.
+**Examples:**
+• “Integrate with our Active Directory.”
+• “Enable zero-trust for internal apps.”
+
+### 3️⃣ Unlimited Users, Docs & Storage
+
+**Description:** No caps — scale workforce, workloads, and departments without limits.
+**Examples:**
+• “Add 2,000 new users this quarter.”
+• “Ingest 5 million documents in migration batch.”
+
+### 4️⃣ Unlimited Bots & Automation
+
+**Description:** Deploy any number of automation agents for scanning, inference, workflows.
+**Examples:**
+• “Run 50 parallel ML inference jobs.”
+• “Deploy a bot for every department.”
+
+### 5️⃣ Full Interface & Workflow Customization
+
+**Description:** Modify UI, themes, templates, processes, and workflows based on internal policies.
+**Examples:**
+• “Customize interface for legal and finance teams.”
+• “Add custom approval flow with 4 levels.”
+
+### 6️⃣ Perpetual Service with In-House Hosting
+
+**Description:** No dependency on external clouds. Run on your own hardware with full control.
+**Examples:**
+• “Deploy CASP on our private data center.”
+• “Enable offline mode for secure environments.”
+
+---
+
+If you'd like, I can also package these in:
+
+✅ PPT-ready format
+✅ Marketing brochure format
+✅ Website landing page sections
+✅ Infographic style (icons + visuals)
+
+Just tell me the format you prefer!
 
