@@ -46,8 +46,12 @@ Here is a **cleaned-up, professional, homepage-ready version** of your menu head
 
 **Power your customer operations** (HubSpot, Salesforce-ready)
 *Manage leads, deals, contacts, follow-ups, and CRM summaries.*
+### **4. Custom App Integrations & Action Control**
 
-### **4. Enterprise Security & Hosting**
+Integrate any internal app and automate any action with natural commands.
+Connect APIs, databases, internal tools, and define custom workflows your way.
+
+### **5. Enterprise Security & Hosting**
 
 **Cloud & On-Prem Options**
 *Choose between secure Community Cloud or full-control On-Prem Hosting.*
