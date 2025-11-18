@@ -1347,13 +1347,130 @@ High-trust infrastructure options tailored for enterprises at different scales a
 • “Enable offline mode for secure environments.”
 
 ---
+Here you go — a **new section for Custom App Integrations & Action Control**, written in the same crisp style as your previous VA and Enterprise Secure sections.
 
-If you'd like, I can also package these in:
+I’m giving you:
 
-✅ PPT-ready format
-✅ Marketing brochure format
-✅ Website landing page sections
-✅ Infographic style (icons + visuals)
+### ✅ A strong heading
 
-Just tell me the format you prefer!
+### ✅ Two sub-sections
 
+### ✅ Six features each
+
+### ✅ Description + 2 example commands per feature
+
+### *(Perfectly aligned with your existing style.)*
+
+---
+
+# ✅ **  Agent Custom App Integrations & Action Control**
+
+### *(Connect Any App | Define Any Action)*
+
+Seamlessly integrate your internal tools, SaaS apps, and business workflows — and control them with natural voice commands.
+
+---
+
+# 🧩 **Segment 1 — Custom App Integrations**
+
+*Connect any internal or external application into CASP with secure, scalable integration pipelines.*
+
+### 1️⃣ Plug-and-Play API Integration
+
+**Description:** Connect REST, GraphQL, Webhook, or SDK-based apps within minutes.
+**Examples:**
+• “Integrate our internal HR API.”
+• “Connect the vendor’s ticketing system.”
+
+### 2️⃣ Database & Data Source Connectors
+
+**Description:** Connect SQL, NoSQL, cloud storage, and enterprise data lakes.
+**Examples:**
+• “Fetch records from our PostgreSQL DB.”
+• “Sync S3 bucket files to CASP.”
+
+### 3️⃣ Custom Internal Tool Onboarding
+
+**Description:** Integrate in-house apps without code changes using CASP adapters.
+**Examples:**
+• “Connect our legacy billing system.”
+• “Add our internal knowledge base app.”
+
+### 4️⃣ Identity & Access Integration
+
+**Description:** Integrate SSO, OAuth2, SAML, and enterprise RBAC.
+**Examples:**
+• “Enable SSO for our ERP users.”
+• “Use our Azure AD roles for permissions.”
+
+### 5️⃣ Event & Automation Hooks
+
+**Description:** Listen to app events and trigger workflows automatically.
+**Examples:**
+• “Trigger summary bot when a new case appears.”
+• “Notify me when invoices are updated.”
+
+### 6️⃣ Unified Search Across All Apps
+
+**Description:** Search documents, tickets, CRM items, DB rows, or logs across connected apps.
+**Examples:**
+• “Search our CRM for all open deals.”
+• “Find tickets in our custom support portal.”
+
+---
+
+# 🎛️ **Segment 2 — Action Control & Custom Workflows**
+
+*Define your own commands, actions, and automations for any integrated app.*
+
+### 1️⃣ Custom Voice Commands for Your App
+
+**Description:** Create natural-language commands mapped to backend actions.
+**Examples:**
+• “Create a project in our internal PM tool.”
+• “Update customer status to ‘Onboarding Started’.”
+
+### 2️⃣ Multi-Step Automated Flows
+
+**Description:** Chain actions across apps using workflow templates.
+**Examples:**
+• “Take today’s orders and push them into billing.”
+• “Generate invoice → Upload to Drive → Email customer.”
+
+### 3️⃣ Data Retrieval & Context Actions
+
+**Description:** Fetch data, summarize, extract insights, and trigger follow-up tasks.
+**Examples:**
+• “Show me pending approvals from our HR system.”
+• “Summarize all transactions from yesterday.”
+
+### 4️⃣ Role-Aware Actions
+
+**Description:** Actions adapt based on user roles and access policies.
+**Examples:**
+• “As admin, approve all pending service requests.”
+• “As manager, list my team’s escalated tickets.”
+
+### 5️⃣ Custom Task Definitions
+
+**Description:** Create reusable actions with parameters and validations.
+**Examples:**
+• “Define action ‘Create onboard packet’.”
+• “Define task: Generate 30-day compliance report.”
+
+### 6️⃣ Cross-App Action Broadcasting
+
+**Description:** Execute one command across multiple apps simultaneously.
+**Examples:**
+• “Update customer status across CRM and billing.”
+• “Close sprint in Jira and update release doc in Confluence.”
+
+---
+
+If you want, I can also generate:
+
+✅ A combined infographic (3 sections: Enterprise Secure + Community vs On-Prem + Custom Integrations)
+✅ A full product sheet / brochure layout
+✅ Slide deck version (PPT-ready)
+
+Just tell me what format you want!
