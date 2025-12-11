@@ -6,7 +6,9 @@ Here is a clean **API documentation** for the `/test/signup` endpoint based on t
 
 ## **Endpoint**
 
-Swagger link :  https://whitecel.com/docs#/pods/signup_user_test_signup_post
+Sign up - Swagger link :  https://whitecel.com/docs#/pods/signup_user_test_signup_post
+
+Forgot Password - Swagger link : https://whitecel.com/docs#/pods/set_password_test_set_password_post
 
 **POST** `https://whitecel.com/test/test/signup`
 
