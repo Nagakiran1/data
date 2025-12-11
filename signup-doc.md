@@ -2,13 +2,15 @@ Here is a clean **API documentation** for the `/test/signup` endpoint based on t
 
 ---
 
-# **Signup API Documentation**
+# **Signup or Forgot Password API Documentation**
 
 ## **Endpoint**
 
 Swagger link :  https://whitecel.com/docs#/pods/signup_user_test_signup_post
 
-**POST** `/test/signup`
+**POST** `https://whitecel.com/test/test/signup`
+
+**POST** `https://whitecel.com/test/set-password`
 
 Registers a new user into the system.
 
