@@ -1,291 +1,108 @@
-# 📘 **CASP AI — User Sign-Up & Authentication Flow (For UI Developers)**
-
-*Version 1.0 — Frontend Integration Guide*
+Here is a clean **API documentation** for the `/test/signup` endpoint based on the Swagger screenshot you provided — rewritten so you can send it directly to your frontend team.
 
 ---
 
-# 🔐 **1. Overview**
+# **Signup API Documentation**
 
-The CASP AI authentication system follows this flow:
+## **Endpoint**
 
-1. **User enters email + password → Sign Up**
-2. **Backend sends a verification email**
-3. **User clicks verification link**
-4. **Email is verified → user can now log in**
-5. **User logs in through `/token` endpoint (OAuth2)**
+Swagger link :  https://whitecel.com/docs#/pods/signup_user_test_signup_post
 
-This document describes:
+**POST** `/test/signup`
 
-* Endpoints
-* Request / response structures
-* UI actions
-* Error handling
-* Expected flow
+Registers a new user into the system.
 
 ---
 
-# 🧭 **2. Complete Workflow Diagram (Frontend Perspective)**
+## **Request Format**
 
-### **Step 1 — Sign Up (POST /signup)**
+**Content-Type:** `application/json`
 
-User submits: `email`, `password`, `first_name`
+### **Minimum Mandatory Fields**
 
-⬇️
-Backend creates account + sends verification email
+The frontend **must** send the following:
 
-⬇️
-UI shows:
-**“Check your email for a verification link.”**
-
----
-
-### **Step 2 — Email Verification (GET /verify-email?token=XYZ)**
-
-When user clicks link → UI should redirect to a "Verification Successful" page.
-
-⬇️
-After verification UI should show:
-**“Your email is verified. Please log in.”**
+| Field        | Type   | Required | Description                                                                   |
+| ------------ | ------ | -------- | ----------------------------------------------------------------------------- |
+| **name**     | string | Yes      | Full name of the user                                                         |
+| **mail**     | string | Yes      | Email ID (used as unique identifier)                                          |
+| **password** | string | Yes      | Plaintext password (server will hash it internally unless otherwise required) |
 
 ---
 
-### **Step 3 — Login (POST /{resource}/users/token)**
+## **Full Request Body Schema (as per backend)**
 
-User enters:
-`username` + `password`
-
-Backend returns:
-
-* `access_token`
-* `token_type`
-* `resource`
-* `username`
-
-UI stores token in localStorage / sessionStorage.
-
----
-
-# 🚀 **3. API Endpoints for UI Integration**
-
----
-
-## ✅ **3.1 Sign Up Endpoint**
-
-### **POST /signup**
-
-### **Request Body**
+The backend accepts a larger object. Non-mandatory fields can be left empty.
 
 ```json
 {
-  "email": "user@example.com",
-  "password": "SomePassword123",
-  "first_name": "John"
+  "username": "",
+  "password": "",
+  "hashed_password": "",
+  "role": [
+    "admin",
+    "user",
+    "manage"
+  ],
+  "mail": "",
+  "resource": "",
+  "name": "",
+  "picture": "",
+  "subscription": "",
+  "expiry": ""
 }
 ```
 
-### **Successful Response (200)**
+---
+
+## **Simplified Example Request (Frontend Should Send)**
+
+If your backend handles hashing internally and sets defaults:
 
 ```json
 {
-  "message": "Verification email sent. Please check your inbox."
+  "name": "John Doe",
+  "mail": "john@example.com",
+  "password": "StrongPassword123"
 }
 ```
 
-### **Errors**
+---
 
-| Status | Meaning                  |
-| ------ | ------------------------ |
-| 400    | Email already registered |
-| 500    | Unexpected server error  |
+## **Backend Behavior (Assumed / Typical)**
+
+* `username` may auto-generate or mirror the email unless required.
+* `hashed_password` should not be supplied by the client.
+* `role` defaults to `"user"` unless you allow custom role assignment.
+* `resource`, `picture`, `subscription`, and `expiry` are optional metadata fields.
 
 ---
 
-## 🔗 **3.2 Email Verification Endpoint**
+## **Validation Requirements (recommended for frontend)**
 
-### **GET /verify-email?token=UUID-HERE**
+1. **name**
 
-UI does NOT need to send JSON.
-Just navigate user to this link.
+   * Minimum 2 characters
+   * No special characters except spaces
 
-### **Successful Response**
+2. **mail**
+
+   * Must be a valid email format
+
+3. **password**
+
+   * Minimum 8 characters
+   * Should contain upper/lowercase, number, and symbol (recommended)
+
+---
+
+## **Example Successful Response**
 
 ```json
 {
-  "message": "Email verified successfully. You may now log in."
+  "status": "success",
+  "message": "User created successfully",
+  "user_id": "<generated_id>"
 }
 ```
 
-UI should then navigate to the **Login Page**.
-
-### Possible Errors
-
-| Status | Meaning                  |
-| ------ | ------------------------ |
-| 400    | Token invalid or expired |
-| 500    | Server error             |
-
----
-
-## 🔐 **3.3 Login Endpoint (Existing)**
-
-### **POST /{resource}/users/token**
-
-This uses OAuth2PasswordRequestForm, so UI must send:
-
-### **Form Data (NOT JSON)**
-
-```
-username=user@example.com
-password=thepassword
-```
-
-### **Example Request (JS Fetch)**
-
-```javascript
-const formData = new FormData();
-formData.append("username", email);
-formData.append("password", password);
-
-fetch(`/auth/users/token`, {
-  method: "POST",
-  body: formData
-})
-```
-
-### **Successful Response**
-
-```json
-{
-  "access_token": "<JWT_TOKEN>",
-  "token_type": "bearer",
-  "resource": "auth",
-  "username": "user@example.com",
-  "expires_in": "2025-02-20T08:00:00Z"
-}
-```
-
-### UI must store:
-
-* `access_token` (for Authorization: Bearer)
-* `username`
-* `resource`
-
-### Errors
-
-| Status | Meaning                     |
-| ------ | --------------------------- |
-| 401    | Incorrect username/password |
-| 401    | Email not verified          |
-| 500    | Server error                |
-
----
-
-# 🧑‍💻 **4. UI Implementation Responsibilities**
-
-### ✔️ **4.1 Sign-Up Page**
-
-Fields:
-
-* First Name
-* Email
-* Password
-* Confirm Password
-
-Actions:
-
-* Call `/signup`
-* On success → show “Check your inbox to verify your email”
-
----
-
-### ✔️ **4.2 Email Verification Page**
-
-UI receives redirect from backend link.
-
-Example URL:
-
-```
-https://app.caspai.in/verify?token=12345
-```
-
-UI must:
-
-1. Extract `token`
-2. Call:
-
-```
-GET /verify-email?token={token}
-```
-
-3. Show:
-
-   * ✔️ Success → “Email verified. Please log in.”
-   * ❌ Error → “Invalid or expired verification link.”
-
----
-
-### ✔️ **4.3 Login Page**
-
-Standard login form.
-
-On success:
-
-* Save `JWT token` from `access_token`
-* Redirect user to dashboard
-* Add Authorization header to all future API calls:
-
-```
-Authorization: Bearer <token>
-```
-
----
-
-# 🔧 **5. Token Storage Guidelines (UI)**
-
-Frontend should store token in:
-
-**Preferred:**
-
-* `sessionStorage` → safer
-* or `in-memory storage` if SPA
-
-**Avoid unless necessary:**
-
-* `localStorage` (XSS risk)
-
----
-
-# 🧪 **6. Testing Checklist for UI Developer**
-
-| Feature                   | Expected Behavior                      |
-| ------------------------- | -------------------------------------- |
-| Sign-up                   | Should receive “Email sent” message    |
-| Email verification        | Redirect shows “Verified successfully” |
-| Login before verification | Should show error “Email not verified” |
-| Login after verification  | Should get access token                |
-| API calls                 | Must include JWT header                |
-
----
-
-# 📁 **7. Reference Verification Email Format**
-
-This is the template user receives in inbox:
-
-* CASP Logo
-* Welcome Message
-* “Verify Email” Button
-* Fallback link
-* CASP highlights & links
-
----
-
-# 📘 **8. Summary for UI Team**
-
-The UI needs to implement:
-
-1. **POST /signup**
-2. Confirmation screen
-3. Email verification landing page + API call
-4. Login page using OAuth2 form-data
-5. Store JWT token
-6. Attach token to all protected API calls
